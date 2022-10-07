@@ -3,7 +3,7 @@ server:
 spring:
   data:
     mongodb:
-      URI: mongodb://localhost:27017/ClientCoin
+      URI: mongodb://localhost:27017/accountBC
   redis:
     port: 6379
     host: localhost
