@@ -18,7 +18,7 @@ public class KafkaConsumerService {
     public void consumeJsonAccount(Client client) {
         System.out.println("Se ha creado el siguiente cliente: " + client);
         Account newAccount = new Account(UUID.randomUUID().toString(),client,0.0,"A","2022.10.07",null);
-        accountRepository.save(newAccount);
+        accountRepository.save(newAccount).subscribe();
         System.out.println("Se ha creado una nueva cuenta: ");
     }
 }
