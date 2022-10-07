@@ -1,7 +1,6 @@
-package nttdata.grupouno.com.mstransactionservice.config;
+package nttdata.grupouno.com.msmarketBCservice.config;
 
-import nttdata.grupouno.com.mstransactionservice.model.RequestBC;
-import nttdata.grupouno.com.mstransactionservice.model.Transaction;
+import nttdata.grupouno.com.msmarketBCservice.model.RequestBC;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;

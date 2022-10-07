@@ -4,9 +4,10 @@ import nttdata.grupouno.com.mstransactionservice.model.Transaction;
 import nttdata.grupouno.com.mstransactionservice.repositories.TransactionRepository;
 import nttdata.grupouno.com.mstransactionservice.service.ITransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
+@Service
 public class TransactionServiceImpl implements ITransactionService {
     @Autowired
     private TransactionRepository transactionRepository;

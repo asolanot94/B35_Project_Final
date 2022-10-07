@@ -2,11 +2,9 @@ package nttdata.grupouno.com.mstransactionservice.model.Convert;
 
 import nttdata.grupouno.com.mstransactionservice.model.RequestBC;
 import nttdata.grupouno.com.mstransactionservice.model.Transaction;
-import nttdata.grupouno.com.mstransactionservice.util.Util;
+import org.springframework.stereotype.Component;
 
-import java.util.Date;
-import java.util.UUID;
-
+@Component
 public class TransactionConvert {
 
     public Transaction convertToTransaction(RequestBC requestBC){
