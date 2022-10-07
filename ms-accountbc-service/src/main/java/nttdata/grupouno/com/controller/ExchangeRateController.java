@@ -17,22 +17,22 @@ public class ExchangeRateController {
     private ExchangeRateService rateService;
 
     @PostMapping("/")
-    public Mono<ExchangeRate> addTypeDocument(@RequestBody @Valid ExchangeRate request){
+    public Mono<ExchangeRate> addRate(@RequestBody @Valid ExchangeRate request){
         return rateService.create(request);
     }
 
     @GetMapping("/all")
-    public Flux<ExchangeRate> getAllDocument(){
+    public Flux<ExchangeRate> getAll(){
         return rateService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<ExchangeRate> getTypeDocument(@PathVariable String id){
+    public Mono<ExchangeRate> getById(@PathVariable String id){
         return rateService.getOne(id);
     }
 
     @DeleteMapping("/{id}")
-    public  Mono<Long> deleteTypeDocument(@PathVariable String id){
+    public  Mono<Long> deleteById(@PathVariable String id){
         return rateService.deleteById(id);
     }
 }

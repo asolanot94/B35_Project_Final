@@ -17,12 +17,12 @@ public class AccountController {
     private IAccountService accountService;
 
     @PostMapping("/")
-    public Mono<Account> addTypeDocument(@RequestBody @Valid Account request){
+    public Mono<Account> addAccount(@RequestBody @Valid Account request){
         return accountService.createdAccount(request);
     }
 
     @GetMapping("/all")
-    public Flux<Account> getAllDocument(){
+    public Flux<Account> getAllAccount(){
         return accountService.findAll();
     }
 }

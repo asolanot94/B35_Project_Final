@@ -23,8 +23,8 @@ public class ReactiveRedisConfiguration {
 
     @Bean
     public ReactiveRedisConnectionFactory reactiveRedisConnectionFactory() {
-        return new LettuceConnectionFactory(Objects.requireNonNull(env.getProperty("spring.data.redis.host")),
-                Integer.parseInt(Objects.requireNonNull(env.getProperty("spring.data.redis.port"))));
+        return new LettuceConnectionFactory(Objects.requireNonNull("localhost"),
+                Integer.parseInt(Objects.requireNonNull("6379")));
     }
 
     @Bean

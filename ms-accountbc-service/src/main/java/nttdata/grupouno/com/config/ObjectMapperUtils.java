@@ -10,7 +10,7 @@ import lombok.experimental.UtilityClass;
 public class ObjectMapperUtils {
     private final ObjectMapper mapper = createObjectMapper();
 
-    public static final String BOOK_KEY = "BK";
+    public static final String BOOK_KEY = "BK2";
 
     private ObjectMapper createObjectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
