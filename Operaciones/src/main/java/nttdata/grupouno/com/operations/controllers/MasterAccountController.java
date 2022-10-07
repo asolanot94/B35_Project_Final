@@ -37,12 +37,13 @@ public class MasterAccountController {
     private IAccountClientService accountClientService;
     @Autowired
     private IDebtClientService debtClientService;
-    KafkaProducerService kafkaProducerService;
-
     @Autowired
+    private KafkaProducerService kafkaProducerService;
+
+    /*@Autowired
     MasterAccountController(KafkaProducerService kafkaProducerService) {
         this.kafkaProducerService = kafkaProducerService;
-    }
+    }*/
 
     public Mono<ResponseEntity<Map<String, Object>>> fallbackBank(RuntimeException runtimeException){
         Map<String, Object> response = new HashMap<>();
@@ -97,9 +98,9 @@ public class MasterAccountController {
                                                                 .flatMap(aLong1 -> {
                                                                     a.getClientModel().setPyme(aLong1.intValue());
                                                                     Mono<MasterAccountModel> accountModelMono = accountServices.createAccount(a.getAccountModel(), a.getClientModel())
-                                                                            /*.doOnSuccess(accountModel -> {
+                                                                            .doOnSuccess(accountModel -> {
                                                                                 this.kafkaProducerService.sendMessage(accountModel);
-                                                                            })*/;
+                                                                            });
                                                                     return accountModelMono
                                                                             .flatMap(e -> {
                                                                                 response.put("account", e);
