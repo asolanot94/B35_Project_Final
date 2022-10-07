@@ -1,4 +1,4 @@
-package nttdata.grupouno.com.msmarketBCservice.config;
+package nttdata.grupouno.com.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;

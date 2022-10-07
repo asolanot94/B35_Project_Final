@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "accountBootcoin")
 public class Account {
     private String id;
-    private Client cliente;
+    private String idCliente;
     private Double amount;
     private String state;
     private String startDate;

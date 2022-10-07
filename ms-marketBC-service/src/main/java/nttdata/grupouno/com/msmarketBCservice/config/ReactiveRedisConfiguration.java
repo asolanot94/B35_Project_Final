@@ -1,4 +1,4 @@
-package nttdata.grupouno.com.config;
+package nttdata.grupouno.com.msmarketBCservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

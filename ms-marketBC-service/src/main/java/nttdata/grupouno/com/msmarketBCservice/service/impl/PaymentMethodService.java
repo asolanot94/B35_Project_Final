@@ -1,29 +1,29 @@
-package nttdata.grupouno.com.services.impl;
+package nttdata.grupouno.com.msmarketBCservice.service.impl;
 
-import nttdata.grupouno.com.model.ExchangeRate;
-import nttdata.grupouno.com.repositories.IExchangeRateRepository;
-import nttdata.grupouno.com.services.IExchangeRateService;
+import nttdata.grupouno.com.msmarketBCservice.model.PaymentMethod;
+import nttdata.grupouno.com.msmarketBCservice.repositories.IPaymentMethodRepository;
+import nttdata.grupouno.com.msmarketBCservice.service.IPaymentMethodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class ExchangeRateService implements IExchangeRateService {
+public class PaymentMethodService implements IPaymentMethodService {
     @Autowired
-    private IExchangeRateRepository exchangeRateRepository;
+    private IPaymentMethodRepository exchangeRateRepository;
     @Override
-    public Mono<ExchangeRate> create(ExchangeRate model) {
+    public Mono<PaymentMethod> create(PaymentMethod model) {
         return exchangeRateRepository.save(model);
     }
 
     @Override
-    public Flux<ExchangeRate> getAll() {
+    public Flux<PaymentMethod> getAll() {
         return exchangeRateRepository.getAll();
     }
 
     @Override
-    public Mono<ExchangeRate> getOne(String id) {
+    public Mono<PaymentMethod> getOne(String id) {
         return exchangeRateRepository.get(id);
     }
 

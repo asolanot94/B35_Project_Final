@@ -1,6 +1,6 @@
-package nttdata.grupouno.com.config;
+package nttdata.grupouno.com.mstransactionservice.config;
 
-import nttdata.grupouno.com.model.Client;
+import nttdata.grupouno.com.mstransactionservice.model.Transaction;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import java.util.Map;
 @Configuration
 public class KafkaConsumerConfig {
     @Bean
-    public ConsumerFactory<String, Client> userConsumerFactory() {
+    public ConsumerFactory<String, Transaction> userConsumerFactory() {
         Map<String, Object> config = new HashMap<>();
 
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -26,12 +26,12 @@ public class KafkaConsumerConfig {
         config.put(JsonDeserializer.USE_TYPE_INFO_HEADERS,false);
         config.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
         return new DefaultKafkaConsumerFactory<>(config, new StringDeserializer(),
-                new JsonDeserializer<>(Client.class));
+                new JsonDeserializer<>(Transaction.class));
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, Client> accountKafkaListenerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, Client> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    public ConcurrentKafkaListenerContainerFactory<String, Transaction> accountKafkaListenerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, Transaction> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(userConsumerFactory());
         return factory;
     }

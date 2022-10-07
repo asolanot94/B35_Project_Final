@@ -1,7 +1,7 @@
-package nttdata.grupouno.com.msmarketBCservice.config;
+package nttdata.grupouno.com.mstransactionservice.config;
 
 
-import nttdata.grupouno.com.msmarketBCservice.model.RequestBC;
+import nttdata.grupouno.com.mstransactionservice.model.Transaction;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ public class KafkaProducerConfig {
     private final String bootstrapAddress = "localhost:9092";
 
     @Bean
-    public ProducerFactory<String, RequestBC> producerFactoryAccount(){
+    public ProducerFactory<String, Transaction> producerFactoryAccount(){
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrapAddress);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -32,7 +32,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean(name = "kafkaAccountTemplate")
-    public KafkaTemplate<String, RequestBC> kafkaAccountTemplate() {
+    public KafkaTemplate<String, Transaction> kafkaAccountTemplate() {
         return new KafkaTemplate<>(producerFactoryAccount());
     }
 }

@@ -1,4 +1,4 @@
-package nttdata.grupouno.com.util;
+package nttdata.grupouno.com.msmarketBCservice.util;
 
 
 import java.text.DateFormat;

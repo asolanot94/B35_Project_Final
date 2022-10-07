@@ -8,13 +8,13 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaProducerService {
+public class KafkaProducerTransService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducerService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducerTransService.class);
 
     private final KafkaTemplate<String, RequestBC> kafkaTemplate;
 
-    public KafkaProducerService(@Qualifier("kafkaAccountTemplate") KafkaTemplate<String, RequestBC> kafkaTemplate) {
+    public KafkaProducerTransService(@Qualifier("kafkaAccountTemplate") KafkaTemplate<String, RequestBC> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 

@@ -1,15 +1,16 @@
-package nttdata.grupouno.com.services;
+package nttdata.grupouno.com.msmarketBCservice.service;
 
-import nttdata.grupouno.com.model.ExchangeRate;
+
+import nttdata.grupouno.com.msmarketBCservice.model.PaymentMethod;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IExchangeRateService {
-    Mono<ExchangeRate> create(ExchangeRate model);
+public interface IPaymentMethodService {
+    Mono<PaymentMethod> create(PaymentMethod model);
 
-    Flux<ExchangeRate> getAll();
+    Flux<PaymentMethod> getAll();
 
-    Mono<ExchangeRate> getOne(String id);
+    Mono<PaymentMethod> getOne(String id);
 
     Mono<Long> deleteById(String id);
 }

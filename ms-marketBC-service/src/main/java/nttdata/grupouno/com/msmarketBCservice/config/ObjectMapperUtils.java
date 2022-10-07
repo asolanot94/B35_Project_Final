@@ -1,4 +1,4 @@
-package nttdata.grupouno.com.config;
+package nttdata.grupouno.com.msmarketBCservice.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +10,7 @@ import lombok.experimental.UtilityClass;
 public class ObjectMapperUtils {
     private final ObjectMapper mapper = createObjectMapper();
 
-    public static final String BOOK_KEY = "BK2";
+    public static final String BOOK_KEY = "BK3";
 
     private ObjectMapper createObjectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();

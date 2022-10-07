@@ -7,5 +7,5 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface IClientRepository extends ReactiveMongoRepository<Client, String> {
-    Flux<Client> findByDocumentNumberAndDocumentType(String documentNumber, String documentType);
+    Flux<Client> findByDocumentNumberAndDocumentTypeAndCellphone(String documentNumber, String documentType, Integer cellphone);
 }
