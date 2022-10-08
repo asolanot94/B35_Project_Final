@@ -47,8 +47,12 @@ public class MasterAccountServices implements IMasterAccountServices {
         account.setId(UUID.randomUUID().toString());
         account.setType(new TypeModel(account.getType().getCode(), null, null, null, null, null, null, null, null,null,null));
 
-        return webClientApiService.findClient(clientModel.getCodeClient()).
-            flatMap(x -> {
+        return webClientApiService.findClient(clientModel.getCodeClient())
+                .filter(masterAccountModel -> {
+                    return masterAccountModel.getStatus().equals("T");
+                })
+
+        .flatMap(x -> {
                 if(!x.getId().equals(clientModel.getCodeClient())) return Mono.empty();
                 
                 return accountRepository.save(account)

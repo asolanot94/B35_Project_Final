@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "5b1a9a2d-69b2-4862-9415-3f1cb948c01e",
+		"name": "SERVICE P2P",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23461862"
+	},
+	"item": [
+		{
+			"name": "tipo de cambio",
+			"item": [
+				{
+					"name": "Crear Tasa Compra/Venta",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Tasa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/account/exchange/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"account",
+								"exchange",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Hist",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"65168186161\",\r\n    \"cliente\":{\r\n        \"id\":\"9696969696\"\r\n    },\r\n    \"amount\":0.0,\r\n    \"state\":\"A\",\r\n    \"startDate\":\"2020.10.07\",\r\n    \"endDate\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8031/account/",
+							"host": [
+								"localhost"
+							],
+							"port": "8031",
+							"path": [
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Account Bootcoin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"546846846541\",\r\n    \"documentNumber\":\"85962547\",\r\n    \"documentType\":\"DNI\",\r\n    \"cellphone\":\"858563574\",\r\n    \"email\":\"asffa@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8030/client",
+					"host": [
+						"localhost"
+					],
+					"port": "8030",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"546846846541\",\r\n    \"documentNumber\":\"85962547\",\r\n    \"documentType\":\"DNI\",\r\n    \"cellphone\":\"858563574\",\r\n    \"email\":\"asffa@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8001/client/All",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"client",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Metodos de Pago",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"546846846541\",\r\n    \"documentNumber\":\"85962547\",\r\n    \"documentType\":\"DNI\",\r\n    \"cellphone\":\"858563574\",\r\n    \"email\":\"asffa@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/Payment/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"Payment",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Metodo PAgo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"2\",\r\n    \"description\":\"TRANSFERENCIA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/Payment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"Payment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicita Compra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"556456484\",\r\n    \"amountSoles\":250.0,\r\n    \"amountBootcoin\":10.0,\r\n    \"paymentMethod\":{\"id\": \"1\"},\r\n    \"date\":\"2022.10.07\",\r\n    \"idClient\":\"54584\",\r\n    \"state\":\"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/requestBC/",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"requestBC",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acepta Compra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"556456484\",\r\n    \"amountSoles\":250.0,\r\n    \"amountBootcoin\":10.0,\r\n    \"paymentMethod\":{\"id\": \"1\"},\r\n    \"date\":\"2022.10.07\",\r\n    \"idClient\":\"54584\",\r\n    \"state\":\"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/requestBC/",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"requestBC",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta las Solic Compra P",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"556456484\",\r\n    \"amountSoles\":250.0,\r\n    \"amountBootcoin\":10.0,\r\n    \"paymentMethod\":{\"id\": \"1\"},\r\n    \"date\":\"2022.10.07\",\r\n    \"idClient\":\"54584\",\r\n    \"state\":\"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/requestBC/",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"requestBC",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"556456484\",\r\n    \"amountSoles\":250.0,\r\n    \"amountBootcoin\":10.0,\r\n    \"paymentMethod\":{\"id\": \"1\"},\r\n    \"date\":\"2022.10.07\",\r\n    \"idClient\":\"54584\",\r\n    \"state\":\"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8033/market/requestBC/",
+					"host": [
+						"localhost"
+					],
+					"port": "8033",
+					"path": [
+						"market",
+						"requestBC",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
